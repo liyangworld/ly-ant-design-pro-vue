@@ -1,9 +1,13 @@
 <template>
-  <div>Footer</div>
+  <div class="footer">Ant Design Vue Pro ©2019 Created by LY</div>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style></style>
+<style>
+.footer {
+  text-align: center;
+}
+</style>

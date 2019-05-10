@@ -48,18 +48,65 @@ const asyncRouterMap = [
         redirect: "/dashboard/analysis",
         meta: { title: "仪表盘", keepAlive: true, permission: ["dashboard"] },
         component: () =>
-          import(/* webpackChunkName: "layout" */ "@/layouts/RouteView"),
+          import(/* webpackChunkName: "layout" */ "@/layouts/RenderRouterView"),
         // component: { render: h => h("router-view") },
         children: [
           {
             path: "/dashboard/analysis",
             name: "analysis",
-            component: () => import("@/views/dashboard/Analysis"),
+            component: () =>
+              import(
+                /* webpackChunkName: "dashboard" */ "@/views/dashboard/Analysis"
+              ),
             meta: {
               title: "分析页",
               keepAlive: false,
               permission: ["dashboard"],
             },
+          },
+        ],
+      },
+      {
+        path: "/form",
+        redirect: "/form/basic-form",
+        component: () =>
+          import(/* webpackChunkName: "layout" */ "@/layouts/RenderRouterView"),
+        children: [
+          {
+            path: "/form/basic-form",
+            component: () =>
+              import(/* webpackChunkName: "form" */ "@/views/forms/BasicForm"),
+          },
+          {
+            path: "/form/step-form",
+            redirect: "/form/step-form/info",
+            component: () =>
+              import(
+                /* webpackChunkName: "form" */ "@/views/forms/stepForm/StepForm"
+              ),
+            children: [
+              {
+                path: "/form/step-form/info",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "form" */ "@/views/forms/stepForm/Step1"
+                  ),
+              },
+              {
+                path: "/form/step-form/confirm",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "form" */ "@/views/forms/stepForm/Step2"
+                  ),
+              },
+              {
+                path: "/form/step-form/result",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "form" */ "@/views/forms/stepForm/Step3"
+                  ),
+              },
+            ],
           },
         ],
       },

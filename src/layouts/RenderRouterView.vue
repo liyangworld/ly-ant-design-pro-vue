@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "RouteView",
+  name: "RenderRouterView",
   props: {
     keepAlive: {
       type: Boolean,
