@@ -12,4 +12,8 @@ export default function Initializer() {
     types.APP_NAV_THEME,
     Vue.ls.get(types.APP_NAV_THEME, defaultSettings.navTheme),
   )
+  store.commit(
+    types.APP_COLOR_WEAK,
+    Vue.ls.get(types.APP_COLOR_WEAK, defaultSettings.colorWeak),
+  )
 }

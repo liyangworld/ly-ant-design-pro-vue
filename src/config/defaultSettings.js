@@ -9,6 +9,7 @@ export default {
   primaryColor: "#1890FF",
   layout: "sidemenu", // nav menu position: sidemenu or topmenu
   navTheme: "dark",
+  colorWeak: false,
   production:
     process.env.NODE_ENV === "production" &&
     process.env.VUE_APP_PREVIEW !== "true",

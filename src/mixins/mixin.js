@@ -5,6 +5,7 @@ const mixinStoreApp = {
     ...mapState({
       layoutMode: state => state.app.layout,
       navTheme: state => state.app.theme,
+      colorWeak: state => state.app.weak,
     }),
   },
   methods: {

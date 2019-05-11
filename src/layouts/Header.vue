@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <div class="header">
     <a-icon
       class="trigger"
       :type="collapsed ? 'menu-unfold' : 'menu-fold'"
       @click="$emit('toggleCollapsed')"
     ></a-icon>
-    <div class="global-header-right">
-      <a-icon class="search" type="search"></a-icon>
-    </div>
+    <div class="global-header-right">头部菜单</div>
   </div>
 </template>
 

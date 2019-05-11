@@ -8,9 +8,9 @@ Vue.use(Router)
 const constantRouterMap = [
   {
     path: "/user",
+    redirect: "/user/login",
     component: () =>
       import(/* webpackChunkName: "layout" */ "@/layouts/UserLayout"),
-    redirect: "/user/login",
     children: [
       {
         path: "/user/login",
