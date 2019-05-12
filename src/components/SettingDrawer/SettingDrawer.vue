@@ -20,10 +20,7 @@
           <h3>整体风格定制</h3>
           <div class="block-checkbox">
             <!-- 暗色 -->
-            <a-tooltip>
-              <template v-slot:title>
-                <div>暗色</div>
-              </template>
+            <a-tooltip title="暗色">
               <div class="item" @click="handleMenuTheme('dark')">
                 <img
                   src="https://gw.alipayobjects.com/zos/rmsportal/LCkqqYNmvBEbokSDscrm.svg"
@@ -35,10 +32,7 @@
               </div>
             </a-tooltip>
             <!-- 亮色 -->
-            <a-tooltip>
-              <template v-slot:title>
-                <div>亮色</div>
-              </template>
+            <a-tooltip title="亮色">
               <div class="item" @click="handleMenuTheme('light')">
                 <img
                   src="https://gw.alipayobjects.com/zos/rmsportal/jpRkZQMyYRryryPNtyIC.svg"
@@ -78,6 +72,20 @@
                 </div>
               </div>
             </a-tooltip>
+          </div>
+          <!-- 左侧菜单和顶部菜单设置 -->
+          <div>
+            <a-list>
+              <a-list-item>
+                <a-list-item-meta title="固定 Header"></a-list-item-meta>
+                <a-switch
+                  v-slot:actions
+                  size="small"
+                  :defaultChecked="fixedHeader"
+                  @change="handleFixedHeader"
+                />
+              </a-list-item>
+            </a-list>
           </div>
         </div>
         <a-divider />
@@ -146,6 +154,9 @@ export default {
     onColorWeak(checked) {
       this.$store.commit(types.APP_COLOR_WEAK, checked)
       updateColorWeak(checked)
+    },
+    handleFixedHeader(fixed) {
+      this.$store.commit(types.APP_COLOR_WEAK, fixed)
     },
     doCopy() {
       const text = `export default {

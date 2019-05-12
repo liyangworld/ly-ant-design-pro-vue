@@ -1,13 +1,24 @@
 <template>
-  <a-layout>
-    <sider-menu :theme="navTheme" :collapsed="collapsed" :collapsible="true" />
-    <a-layout style="min-height: 100vh;">
-      <a-layout-header style="background: #fff; padding: 0">
-        <Header
-          :collapsed="collapsed"
-          @toggleCollapsed="collapsed = !collapsed"
-        />
-      </a-layout-header>
+  <a-layout :class="['layout', device]">
+    <sider-menu
+      v-if="isSideMenu()"
+      :theme="navTheme"
+      :collapsed="collapsed"
+      :collapsible="true"
+      :menus="menus"
+    />
+    <a-layout
+      :class="[layoutMode, `content-width-${contentWidth}`]"
+      style="min-height: 100vh;"
+    >
+      <Header
+        :collapsed="collapsed"
+        @toggleCollapsed="collapsed = !collapsed"
+        :mode="layoutMode"
+        :menus="menus"
+        :theme="navTheme"
+        :device="device"
+      />
       <a-layout-content>
         <transition name="page-transition">
           <render-router-view />
@@ -44,6 +55,7 @@ export default {
     return {
       collapsed: false,
       production: defaultSettings.production,
+      menus: [],
     }
   },
 }

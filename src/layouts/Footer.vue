@@ -8,8 +8,10 @@
       >
         <a-icon type="github" />
       </a>
-      <a href="https://ant.design/">Ant Design</a>
-      <a href="https://vue.ant.design/">Vue Antd</a>
+      <a href="https://ant.design/" target="_blank">Ant Design</a>
+      <a href="https://vue.ant.design/docs/vue/introduce-cn/" target="_blank"
+        >Antd Vue</a
+      >
     </div>
     <div class="copyright">
       <span>Copyright</span>

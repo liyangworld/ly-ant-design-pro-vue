@@ -13,6 +13,7 @@
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "dayjs": "^1.8.13",
+    "enquire.js": "^2.1.6",
     "nprogress": "^0.2.0",
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.0",

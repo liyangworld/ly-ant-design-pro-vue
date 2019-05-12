@@ -1,5 +1,5 @@
 <template>
-  <div>分析页</div>
+  <div style="height: 1500px">分析页</div>
 </template>
 
 <script>
